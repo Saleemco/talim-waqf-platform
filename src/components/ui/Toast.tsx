@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react'
+import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { CheckCircle, AlertCircle, X, Info } from 'lucide-react'
 import { cn } from '@/lib/utils'

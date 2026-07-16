@@ -1,5 +1,5 @@
 import { useAuth } from '@/app/AuthProvider'
-import { User, LogOut } from 'lucide-react'
+import { LogOut } from "lucide-react"
 
 export function Header() {
   const { user, signOut } = useAuth()

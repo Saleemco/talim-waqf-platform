@@ -24,8 +24,7 @@ import {
 import { motion } from "motion/react"
 import { supabase } from "@/lib/supabase"
 import { useAuth } from "@/app/AuthProvider"
-import { Button, Input, Card, Modal, Badge, Spinner, Toast, Select } from "@/components/ui"
-
+import { Button, Input, Card, Modal, Toast, Select } from "@/components/ui"
 // Ta'lim Classes Content Component
 function TaLimClassesContent({ type }: { type?: string }) {
   const [classes, setClasses] = useState<any[]>([])
