@@ -1,5 +1,5 @@
 ﻿import { useParams, Link, useNavigate } from "react-router-dom"
-import { BookOpen, Building2, Users, Calendar, ArrowLeft, Edit, Trash2, User, Clock } from "lucide-react"
+import { BookOpen, Building2, Users, Calendar, ArrowLeft, Edit, Trash2, Clock } from "lucide-react"
 import { Card, Badge, Spinner, Button } from "@/components/ui"
 import { useClasses } from "../hooks/useClasses"
 import { useState } from "react"
@@ -151,7 +151,7 @@ export function ClassDetail() {
       <ClassForm
         isOpen={showEditForm}
         onClose={() => setShowEditForm(false)}
-        classData={cls}
+        editingClass={cls}
         onSuccess={() => {
           setShowEditForm(false)
           showToast("Class updated successfully", "success")

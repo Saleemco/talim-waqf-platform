@@ -5,7 +5,7 @@ import { Register } from "@/pages/Register"
 import { TestSupabase } from "@/pages/TestSupabase"
 import { ClassList } from "@/features/classes/pages/ClassList"
 import { SchoolList } from "@/features/schools/pages/SchoolList"
-import { DashboardLayout } from "@/components/layout/DashboardLayout"
+
 
 export function AppRoutes() {
   console.log("🔴 AppRoutes rendering - SIMPLE VERSION")

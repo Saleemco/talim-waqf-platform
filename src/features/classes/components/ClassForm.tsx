@@ -30,7 +30,6 @@ export function ClassForm({ isOpen, onClose, onSuccess, editingClass }: ClassFor
   const [loadingSchools, setLoadingSchools] = useState(true)
 
   useEffect(() => {
-    // Fetch schools for dropdown
     async function fetchSchools() {
       try {
         const { data, error } = await supabase
@@ -94,7 +93,6 @@ export function ClassForm({ isOpen, onClose, onSuccess, editingClass }: ClassFor
     setLoading(true)
     setError("")
 
-    // Validate
     if (!formData.name || formData.name.trim().length < 2) {
       setError("Class name is required (minimum 2 characters)")
       setLoading(false)
@@ -119,18 +117,16 @@ export function ClassForm({ isOpen, onClose, onSuccess, editingClass }: ClassFor
       }
 
       if (editingClass) {
-        // Update
         const { error } = await supabase
           .from("classes")
-          .update(dataToSave)
+          .update(dataToSave as any)
           .eq("id", editingClass.id)
         
         if (error) throw error
       } else {
-        // Create
         const { error } = await supabase
           .from("classes")
-          .insert([dataToSave])
+          .insert([dataToSave as any])
         
         if (error) throw error
       }
@@ -154,7 +150,6 @@ export function ClassForm({ isOpen, onClose, onSuccess, editingClass }: ClassFor
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
       <div className="bg-[#022c16] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-white/10">
           <h2 className="text-xl font-serif font-bold text-white">
             {editingClass ? "Edit Class" : "Add New Class"}
@@ -167,7 +162,6 @@ export function ClassForm({ isOpen, onClose, onSuccess, editingClass }: ClassFor
           </button>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {error && (
             <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
@@ -175,7 +169,6 @@ export function ClassForm({ isOpen, onClose, onSuccess, editingClass }: ClassFor
             </div>
           )}
 
-          {/* School Selection */}
           <div>
             <label className="block text-xs font-medium text-white/60 mb-1.5">
               School *
@@ -244,6 +237,9 @@ export function ClassForm({ isOpen, onClose, onSuccess, editingClass }: ClassFor
                 <option value="arabic" className="bg-[#022c16]">Arabic</option>
                 <option value="islamic_studies" className="bg-[#022c16]">Islamic Studies</option>
                 <option value="hifz" className="bg-[#022c16]">Hifz</option>
+                <option value="tarjuma" className="bg-[#022c16]">Tarjuma</option>
+                <option value="tajweed" className="bg-[#022c16]">Tajweed</option>
+                <option value="yassarnal" className="bg-[#022c16]">Yassarnal</option>
               </select>
             </div>
             <div>

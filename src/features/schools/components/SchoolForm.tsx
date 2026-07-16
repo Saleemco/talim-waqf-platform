@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect } from "react"
 import { X } from "lucide-react"
+import { supabase } from "@/lib/supabase"
 
 interface SchoolFormProps {
   isOpen: boolean
@@ -82,18 +83,16 @@ export function SchoolForm({ isOpen, onClose, onSuccess, editingSchool }: School
     }
 
     try {
-      const { supabase } = await import("@/lib/supabase")
-      
       if (editingSchool) {
         const { error } = await supabase
           .from("schools")
-          .update(formData)
+          .update(formData as any)
           .eq("id", editingSchool.id)
         if (error) throw error
       } else {
         const { error } = await supabase
           .from("schools")
-          .insert([formData])
+          .insert([formData as any])
         if (error) throw error
       }
 
