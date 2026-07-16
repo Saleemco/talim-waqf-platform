@@ -1,0 +1,202 @@
+﻿import { Link } from 'react-router-dom'
+import { 
+  BookOpen, 
+  Users, 
+  MapPin, 
+  GraduationCap, 
+  School, 
+  FileText,
+  ArrowRight,
+  CheckCircle,
+  TrendingUp,
+  Landmark,
+  BookMarked,
+  UserPlus,
+  Award
+} from 'lucide-react'
+
+export function Home() {
+  return (
+    <div className="min-h-screen">
+      {/* Navigation Bar */}
+      <nav className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <BookOpen className="h-8 w-8 text-green-700" />
+              <span className="ml-2 text-xl font-bold text-green-800">National Ta'lim-ul-Qur'an</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-6">
+              <Link to="/" className="text-gray-700 hover:text-green-700 font-medium">Home</Link>
+              <Link to="/talim-classes" className="text-gray-700 hover:text-green-700">Ta'lim Classes</Link>
+              <Link to="/itqa-registration" className="text-gray-700 hover:text-green-700">ITQA Registration</Link>
+              <Link to="/arabic-learning" className="text-gray-700 hover:text-green-700">Arabic</Link>
+              <Link to="/hufaaz-db" className="text-gray-700 hover:text-green-700">Hufaaz DB</Link>
+              <Link to="/madrasatu-tahfiz" className="text-gray-700 hover:text-green-700">Madrasatu Tahfiz</Link>
+              <Link to="/waqf-e-ardhi" className="text-gray-700 hover:text-green-700">Waqf-e-Ardhi</Link>
+              <Link to="/resources" className="text-gray-700 hover:text-green-700">Resources</Link>
+              <Link to="/login" className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                Login
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-green-50 to-emerald-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                <span className="text-green-700">WAQF-E-ARDHI</span>
+                <br />
+                <span className="text-emerald-700">& QURAN EDUCATION</span>
+              </h1>
+              <p className="text-lg text-gray-600 mt-4 leading-relaxed">
+                THE OFFICIAL NATIONAL PLATFORM
+              </p>
+              <p className="text-xl text-gray-700 mt-2 font-medium">
+                Uniting Quran Education and Waqf Management for a Stronger Ummah.
+              </p>
+              <p className="text-gray-600 mt-4">
+                A secure, transparent and accountable system for managing Quran schools, classes, 
+                Hufaaz records and Waqf-e-Ardhi (land endowments) across Nigeria.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Link to="/register" className="bg-green-700 text-white px-8 py-3 rounded-lg hover:bg-green-800 transition font-medium flex items-center">
+                  Register/Enroll Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+                <Link to="/resources" className="bg-white text-green-700 px-8 py-3 rounded-lg border-2 border-green-700 hover:bg-green-50 transition font-medium flex items-center">
+                  Explore Learning Resources
+                  <BookOpen className="ml-2 h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <Users className="h-10 w-10 text-green-600" />
+                <p className="text-2xl font-bold mt-2">45,781</p>
+                <p className="text-sm text-gray-600">ACTIVE HUFAAZ STUDENTS</p>
+                <p className="text-xs text-green-600 flex items-center mt-1">
+                  <TrendingUp className="h-3 w-3 mr-1" /> +12% this cycle
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-lg">
+                <Landmark className="h-10 w-10 text-emerald-600" />
+                <p className="text-2xl font-bold mt-2">2,356</p>
+                <p className="text-sm text-gray-600">REGISTERED WAQF PARCELS</p>
+                <p className="text-xs text-gray-600">12,842.75 Hectares</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-lg col-span-2">
+                <Award className="h-10 w-10 text-amber-600" />
+                <p className="text-lg font-bold">FEDERAL TRUST AUDIT</p>
+                <p className="text-sm text-green-600 flex items-center">
+                  <CheckCircle className="h-4 w-4 mr-1" /> 100% Verified Ledger Integrity
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Our Key Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-green-50 p-6 rounded-xl text-center hover:shadow-lg transition">
+              <BookMarked className="h-12 w-12 text-green-700 mx-auto" />
+              <h3 className="font-semibold mt-4">QURAN LESSONS</h3>
+              <p className="text-sm text-gray-600 mt-2">Tajweed & Qaida</p>
+            </div>
+            <div className="bg-emerald-50 p-6 rounded-xl text-center hover:shadow-lg transition">
+              <Users className="h-12 w-12 text-emerald-700 mx-auto" />
+              <h3 className="font-semibold mt-4">HUFAAZ TRACKING</h3>
+              <p className="text-sm text-gray-600 mt-2">Juz milestones</p>
+            </div>
+            <div className="bg-amber-50 p-6 rounded-xl text-center hover:shadow-lg transition">
+              <Landmark className="h-12 w-12 text-amber-700 mx-auto" />
+              <h3 className="font-semibold mt-4">WAQF-E-ARDHI</h3>
+              <p className="text-sm text-gray-600 mt-2">Dedicating time</p>
+            </div>
+            <div className="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
+              <UserPlus className="h-12 w-12 text-blue-700 mx-auto" />
+              <h3 className="font-semibold mt-4">STUDENT ENTRY</h3>
+              <p className="text-sm text-gray-600 mt-2">Online enrollment</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Stats Bar */}
+      <section className="bg-green-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <p className="text-3xl font-bold">50+</p>
+              <p className="text-green-200">Madrasahs</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold">200+</p>
+              <p className="text-green-200">Teachers</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold">45K+</p>
+              <p className="text-green-200">Students</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold">100%</p>
+              <p className="text-green-200">Transparency</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center">
+                <BookOpen className="h-8 w-8 text-green-500" />
+                <span className="ml-2 text-xl font-bold text-white">National Ta'lim</span>
+              </div>
+              <p className="mt-4 text-sm">Uniting Quran Education and Waqf Management for a Stronger Ummah.</p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link to="/" className="hover:text-white">Home</Link></li>
+                <li><Link to="/talim-classes" className="hover:text-white">Classes</Link></li>
+                <li><Link to="/hufaaz-db" className="hover:text-white">Hufaaz</Link></li>
+                <li><Link to="/resources" className="hover:text-white">Resources</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Features</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link to="/waqf-e-ardhi" className="hover:text-white">Waqf-e-Ardhi</Link></li>
+                <li><Link to="/itqa-registration" className="hover:text-white">ITQA Registration</Link></li>
+                <li><Link to="/arabic-learning" className="hover:text-white">Arabic Learning</Link></li>
+                <li><Link to="/madrasatu-tahfiz" className="hover:text-white">Madrasatu Tahfiz</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Get Started</h4>
+              <Link to="/register" className="bg-green-700 text-white px-6 py-2 rounded-lg hover:bg-green-800 transition inline-block">
+                Register Now
+              </Link>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+            &copy; 2026 National Ta'lim-ul-Qur'an. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
